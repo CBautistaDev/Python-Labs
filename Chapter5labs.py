@@ -96,3 +96,55 @@ while word not in ('Quit', 'quit', 'q'):
   
 word = input()
 
+'''5.19 LAB: Countdown until matching digits
+'''
+num = int(input())
+if(num >= 20 and num <= 98):
+   firstDigit = num // 10
+   secondDigit = num % 10
+   while(firstDigit != secondDigit):
+       print(num)
+       num = num - 1
+       firstDigit = num // 10
+       secondDigit = num % 10
+   print(num)
+else:
+    print('Input must be 20-98')
+
+'''
+5.21 LAB: Smallest and largest numbers in a list
+Write a program that reads a list of integers into a list
+ as long as the integers are greater than zero, then 
+outputs the smallest and largest integers in the list.
+'''
+user_input = int(input())
+list = []
+
+while user_input > 0:
+   list.append(user_input)
+   user_input = int(input())
+
+print(min(list), max(list))
+
+'''
+5.22 LAB: Output values in a list below a user defined amount
+Write a program that first gets a list of integers from input
+. The input begins with an integer indicating the number of integers 
+that follow. Then, get the last value from the input, which indicates a
+ threshold. Output all integers less than or equal to that last threshold 
+ value.'''
+number_inlist = int(input())
+
+list = []
+max_numbers = 5
+while number_inlist > 0:
+    input_numbers = int(input())
+    list.append(input_numbers)
+    number_inlist -= 1
+
+list.sort()
+max_number = int(input())
+
+for i in list:
+    if i < max_number:
+        print(i)
